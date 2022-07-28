@@ -51,11 +51,11 @@
     <div class="container">
         <h2>SOLICITAÇÃO DE ADESÃO</h2>
         <form>
-          <div class="form-group col-md-6 p-3">
+          <div class="form-group col-md-10 p-3">
             <label for="razaosocial">Razão Social:</label>
             <input type="text" class="form-control" id="razaosocial" placeholder="Insira a Razão Social" required="required">
           </div>
-          <div class="form-group col-md-2 p-3">
+          <div class="form-group col-md-3 p-3">
             <label for="cnpj">CNPJ:</label>
             <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ">
           </div>
@@ -63,23 +63,25 @@
             <label for="empresa">Empresa:</label>
             <input type="text" class="form-control" id="empresa" placeholder="Insira a Empresa">
           </div><br>
-          <h5>ENDEREÇO COMERCIAL</h5>
-          <div class="form-group col-md-3 p-3">
-            <label for="cep">CEP:</label>
-            <input type="text" class="form-control" id="cep" placeholder="Insira o CEP">
-          </div>
-          <div class="form-group col-md-6  p-3">
-            <label for="enderecocomercial">Endereço Comercial:</label>
-            <input type="text" class="form-control" id="enderecocomercial" placeholder="Insira o Endereco Comercial">
-          </div>
-          <div class="form-group col-md-6 p-3">
-            <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" placeholder="Insira a Cidade:">
-          </div>
-          <div class="form-group col-md-3 p-3">
-            <label for="estado">Estado:</label>
-            <input type="text" class="form-control" id="estado" placeholder="Insira o Estado">
-          </div>
+          <fieldset class="form-group col-md-10 border p-3 display: inline-block">
+            <legend><h5>ENDEREÇO COMERCIAL</h5></legend>
+            <div class="form-group col-md-3 p-3">
+              <label for="cep">CEP:</label>
+              <input type="text" class="form-control" id="cep" placeholder="Insira o CEP">
+            </div>
+            <div class="form-group col-md-6  p-3">
+              <label for="enderecocomercial">Endereço Comercial:</label>
+              <input type="text" class="form-control" id="enderecocomercial" placeholder="Insira o Endereco Comercial">
+            </div>
+            <div class="form-group col-md-6 p-3">
+              <label for="cidade">Cidade:</label>
+              <input type="text" class="form-control" id="cidade" placeholder="Insira a Cidade:">
+            </div>
+            <div class="form-group col-md-3 p-3">
+              <label for="estado">Estado:</label>
+              <input type="text" class="form-control" id="estado" placeholder="Insira o Estado">
+            </div>
+          </fieldset>
           <div class="form-group col-md-3 p-3">
             <label for="telefonecomercial">Telefone Comercial com DDD:</label>
             <input type="text" class="form-control" id="telefonecomercial" placeholder="Insira o Telefone Comercial com DDD">
@@ -88,15 +90,15 @@
             <label for="celular">Celular com DDD:</label>
             <input type="text" class="form-control" id="celular" placeholder="Insira o Celular com DDD">
           </div>
-          <div class="form-group col-md-6 p-3">
+          <div class="form-group col-md-10 p-3">
             <label for="representantelegal">Nome do Representante Legal:</label>
             <input type="text" class="form-control" id="representantelegal" placeholder="Insira o Nome do Representante Legal">
           </div>
-          <div class="form-group col-md-6 p-3">
+          <div class="form-group col-md-10 p-3">
             <label for="emailrepresentantelegal">E-mail do Representante Legal:</label>
             <input type="text" class="form-control" id="emailrepresentantelegal" placeholder="Insira o E-mail do Representante Legal">
           </div>
-          <div class="form-group col-md-6 p-3">
+          <div class="form-group col-md-10 p-3">
             <label for="site">Site:</label>
             <input type="text" class="form-control" id="site" placeholder="Insira o Site">
           </div>
@@ -104,7 +106,7 @@
             <label for="rg">RG:</label>
             <input type="text" class="form-control" id="rg" placeholder="Insira o RG">
           </div>
-          <div class="form-group col-md-2 p-3">
+          <div class="form-group col-md-3 p-3">
             <label for="orgaoexpedidoruf">Órgão expedidor/UF:</label>
             <input type="text" class="form-control" id="orgaoexpedidoruf" placeholder="Insira o Órgão expedidor/UF">
           </div>
@@ -115,21 +117,36 @@
           <div class="form-group col-md-6 p-3">
             <p style="margin-bottom: 0px;">Indique o plano de assinatura que deseja:</p>
               <div class="radio">
-                <label><input type="radio" name="plano" checked><span style="margin-left: 5px;">Free</label>
+                <label><input type="radio" name="plano"><span style="margin-left: 5px;">Free</label>
               </div>
               <div class="radio">
                 <label><input type="radio" name="plano"><span style="margin-left: 5px;" ></span>Premium (recomendado)</label>
               </div>
           </div>
           <div class="form-group col-md-6 p-3">
-            <label for="faturamento">Faturamento da empresa em 2021::</label>
-            <input type="text" class="form-control" id="faturamento" placeholder="Insira o Faturamento da empresa em 2021:">
+            <p style="margin-bottom: 0px;">Indique o plano de assinatura que deseja:</p>
+              <div class="radio">
+                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+              </div>
           </div>
           <button type="submit" class="btn btn-primary">Solicitar</button>
         </form>
       </div>
-    
+      
+      
 
-        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
