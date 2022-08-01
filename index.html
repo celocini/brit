@@ -67,7 +67,7 @@
             <div class="col-md-3">
               <div class="form-group p-3">
                 <label for="cnpj">CNPJ:</label>
-                <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ" required="required">
+                <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ" required="required" onblur="validarCNPJ(this)">
               </div>
             </div>
             <div class="col-md-7">
@@ -139,7 +139,7 @@
           </div>
           <div class="form-group col-md-10 p-3">
             <label for="emailrepresentantelegal">E-mail do Representante Legal:</label>
-            <input type="text" class="form-control" id="emailrepresentantelegal" placeholder="Insira o E-mail do Representante Legal" required="required">
+            <input type="email" class="form-control" id="emailrepresentantelegal" placeholder="Insira o E-mail do Representante Legal" required="required">
           </div>
           <div class="form-group col-md-10 p-3">
             <label for="site">Site:</label>
@@ -162,7 +162,7 @@
             <div class="col-md-4">
               <div class="form-group p-3">
                 <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" id="cpf" placeholder="Insira o CPF" required="required">
+                <input type="text" class="form-control" id="cpf" placeholder="Insira o CPF" required="required" onblur="validarCPF(this)">
               </div>
             </div>
           </div>
@@ -199,5 +199,9 @@
        
       <script src="js/bootstrap.min.js"></script>
       <script src="js/cep.js"></script>
+      <script src="js/cpf.js"></script>
+      <script src="js/cnpj.js"></script>
+      
+      
 </body>
 </html>
