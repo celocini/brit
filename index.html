@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O PROJETO BRASIL IT+ ESTÁ NO AR!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css.map" rel="stylesheet">
+    <link href="css/detalhes.css" rel="stylesheet">
 </head>
 <body>
     <br>
@@ -60,13 +62,13 @@
         <h2>SOLICITAÇÃO DE ADESÃO</h2>
         <form>
           <div class="form-group col-md-10 p-3">
-            <label for="razaosocial">Razão Social:</label>
+            <label for="razaosocial" class="required">Razão Social:</label>
             <input type="text" class="form-control" id="razaosocial" placeholder="Insira a Razão Social" required="required">
           </div>
           <div class="row">
             <div class="col-md-3">
               <div class="form-group p-3">
-                <label for="cnpj">CNPJ (somente números):</label>
+                <label for="cnpj" class="required">CNPJ (somente números):</label>
                 <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
               </div>
             </div>
@@ -80,7 +82,7 @@
           <fieldset class="form-group col-md-10 border p-3 display: inline-block">
             <legend><h5>ENDEREÇO COMERCIAL</h5></legend>
             <div class="form-group col-md-3 p-3">
-              <label for="cep">CEP (somente números):</label>
+              <label for="cep" class="required">CEP (somente números):</label>
               <input type="text" class="form-control" id="cep" placeholder="Insira o CEP" required="required" value="" size="10" onfocus="retirarFormatacaoCep(this)" onblur="pesquisacep(this.value);formatarCep(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
             </div>
             <div class="row">
@@ -127,17 +129,17 @@
             </div>
             <div class="col-md-5">
               <div class="form-group p-3">
-                <label for="celular">Celular com DDD (somente números):</label>
+                <label for="celular" class="required">Celular com DDD (somente números):</label>
                 <input type="text" class="form-control" id="celular" placeholder="Insira o Celular com DDD" required="required" maxlength="11" onfocus="retirarFormatacaoTelefone(this)" onblur="formatarTelefone(this);">
               </div>
             </div>
           </div>
           <div class="form-group col-md-10 p-3">
-            <label for="representantelegal">Nome do Representante Legal:</label>
+            <label for="representantelegal" class="required">Nome do Representante Legal:</label>
             <input type="text" class="form-control" id="representantelegal" placeholder="Insira o Nome do Representante Legal" required="required">
           </div>
           <div class="form-group col-md-10 p-3">
-            <label for="emailrepresentantelegal">E-mail do Representante Legal:</label>
+            <label for="emailrepresentantelegal" class="required">E-mail do Representante Legal:</label>
             <input type="email" class="form-control" id="emailrepresentantelegal" placeholder="Insira o E-mail do Representante Legal" required="required" >
           </div>
           <div class="form-group col-md-10 p-3">
@@ -160,13 +162,13 @@
             </div>
             <div class="col-md-4">
               <div class="form-group p-3">
-                <label for="cpf">CPF (somente números):</label>
+                <label for="cpf" class="required">CPF (somente números):</label>
                 <input type="text" class="form-control" id="cpf" placeholder="Insira o CPF" required="required" onfocus="retirarFormatacao(this)" onblur="validarCPF(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
               </div>
             </div>
           </div>
           <div class="form-group col-md-6 p-3">
-            <p style="margin-bottom: 0px;">Indique o plano de assinatura que deseja:</p>
+            <p style="margin-bottom: 0px;" class="required">Indique o plano de assinatura que deseja:</p>
               <div class="radio">
                 <label><input type="radio" name="plano"><span style="margin-left: 5px;">Free</label>
               </div>
@@ -175,7 +177,7 @@
               </div>
           </div>
           <div class="form-group col-md-6 p-3">
-            <p style="margin-bottom: 0px;">Faturamento da empresa em 2021:</p>
+            <p style="margin-bottom: 0px;" class="required">Faturamento da empresa em 2021:</p>
               <div class="radio">
                 <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
               </div>
