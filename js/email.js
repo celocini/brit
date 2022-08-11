@@ -11,7 +11,7 @@ if ((usuario.length >=1) &&
     (dominio.search(".")!=-1) &&
     (dominio.indexOf(".") >=1)&&
     (dominio.lastIndexOf(".") < dominio.length - 1)) {
-document.getElementById("msgemail").innerHTML="ok";
+apagamsg();
 }
 else{
 document.getElementById("msgemail").innerHTML="<font color='red'>E-mail inválido </font>";
