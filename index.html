@@ -4,240 +4,322 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O PROJETO BRASIL IT+ ESTÁ NO AR!</title>
+    <title>O BRASIL IT+ ESTÁ NO AR!</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css.map" rel="stylesheet">
     <link href="css/detalhes.css" rel="stylesheet">
 </head>
 <body>
     <br>
-    <div class="container">
-    <img src="img/BrIT.png" alt="logo" style="max-width:200px"> 
-    <br><br>
-    <h1>O PROJETO BRASIL IT+ ESTÁ NO AR!</h1>
-    <p>Quais inspirações vão movimentar o seu negócio em 2022?<br>
-
-        Renove agora o termo de adesão ao Projeto Brasil IT+ e continue se beneficiando dos nossos conteúdos, treinamentos e eventos. 
-        <br><br> 
-        Planos disponíveis: 
-        <br> </p>
-    <div class="row">
-      <div class="col-md-4" style="background-color: rgba(235, 227, 227, 0.301)">
-        <h5 align="center">FREE </h5>
-        <p>.Conteúdos exclusivos <br>
-        .Diagnóstico de maturidade internacional <br>
-        .Estudos de mercado (Mkt Guides) <br>
-        .Bootcamps online <br>
-        .Conexão com potenciais parceiros internacionais <br>
-        <br></p>
-        <br><br><br>
-        <h6 align="center" style="background-color: rgba(139, 135, 135, 0.13)" >Grátis
-        </h6>
-      </div>
-      <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
-        <h5 align="center">PREMIUM (recomendado) </h5>
-        <p>.Benefícios plano Free <br>
-        .Feiras internacionais <br>
-        .Missões internacionais online e presenciais <br>
-        .Imersão em mercados internacionais <br>
-        .Rodadas de negócios (matchmaking) <br>
-        </p>
-        <table class="table table-striped table-bordered">
-          <thead class='table-dark'>
-             <tr align="center">
-              <th>Faixa de faturamento da empresa</th>
-              <th>Valores</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Até 1 milhão</th>
-              <td align="right">R$ 330,18</td>
-            </tr>
-            <tr>
-              <th>De R$ 1 milhão a R$ 6 milhões</th>
-              <td align="right">R$ 550,30</td>
-            </tr>
-            <tr>
-              <th>De R$ 6 milhões a R$ 20 milhões</th>
-              <td align="right">R$ 1.100,60</td>
-            </tr>
-            <tr>
-              <th>De R$ 20 milhões a R$ 35 milhões</th>
-              <td align="right">R$ 1.981,08</td>
-            </tr>
-            <tr>
-              <th>Acima de R$ 35 milhões</th>
-              <td align="right">R$ 3.301,80</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- <p>
-        Valores / faixa de faturamento da empresa: <br>
-        Até 1 milhão - R$ 330,18 <br>
-        De R$ 1 milhão a R$ 6 milhões - R$ 550,30 <br>
-        De R$ 6 milhões a R$ 20 milhões - R$ 1.100,60 <br>
-        De R$ 20 milhões a R$ 35 milhões - R$ 1.981,08 <br>
-        Acima de R$ 35 milhões - R$ 3.301,80 </p><br> -->
-      </div>
-    </div>
-    <br><br> 
-    No plano PREMIUM o Brasil IT+ pode garantir até 80%* de subsídio na participação de sua empresa em eventos internacionais.
-    <br>
-    * Considerando o evento mais caro do nosso portfólio e mensalidade mais baixa.<br><br>
-    Em dúvida de qual plano escolher? Entre em contato conosco: internacional@softex.br Mais informações: https://brasilitplus.com/
-    <br><br> 
-      
-    </p><br>
-    </div>
-    <div class="container">
-        <h2>SOLICITAÇÃO DE ADESÃO</h2>
-        <form>
-          <div class="form-group col-md-10 p-3">
-            <label for="razaosocial" class="required">Razão Social:</label>
-            <input type="text" class="form-control" id="razaosocial" placeholder="Insira a Razão Social" required="required">
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <div class="form-group p-3">
-                <label for="cnpj" class="required">CNPJ (somente números):</label>
-                <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="form-group p-3">
-                <label for="empresa">Empresa:</label>
-                <input type="text" class="form-control" id="empresa" placeholder="Insira a Empresa" required="required">
-              </div><br>
-            </div>
-          </div>
-          <fieldset class="form-group col-md-10 border p-3 display: inline-block">
-            <legend><h5>ENDEREÇO COMERCIAL</h5></legend>
-            <div class="form-group col-md-3 p-3">
-              <label for="cep" class="required">CEP (somente números):</label>
-              <input type="text" class="form-control" id="cep" placeholder="Insira o CEP" required="required" value="" size="10" onfocus="retirarFormatacaoCep(this)" onblur="pesquisacep(this.value);formatarCep(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group p-3">
-                  <label for="logradouro">Logradouro:</label>
-                  <input type="text" class="form-control" id="logradouro" placeholder="Insira o Logradouro" required="required">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group p-3">
-                  <label for="numero">Número:</label>
-                  <input type="text" class="form-control" id="numero" placeholder="Insira o Número" required="required">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group p-3">
-                  <label for="complemento">Complemento:</label>
-                  <input type="text" class="form-control" id="complemento" placeholder="Insira o Complemento">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-9">
-                <div class="form-group p-3">
-                  <label for="cidade">Cidade:</label>
-                  <input type="text" class="form-control" id="cidade" placeholder="Insira a Cidade:" required="required">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group p-3">
-                  <label for="estado">Estado:</label>
-                  <input type="text" class="form-control" id="estado" placeholder="Insira o Estado" required="required">
-                </div>
-              </div>
-            </div>
-          </fieldset>
-          <div class="row">
-            <div class="col-md-5">
-              <div class="form-group p-3">
-                <label for="telefonecomercial">Telefone Comercial com DDD (somente números):</label>
-                <input type="text" class="form-control" id="telefonecomercial" placeholder="Insira o Telefone Comercial com DDD" maxlength="11" onfocus="retirarFormatacaoTelefone(this)" onblur="formatarTelefone(this);">
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="form-group p-3">
-                <label for="celular" class="required">Celular com DDD (somente números):</label>
-                <input type="text" class="form-control" id="celular" placeholder="Insira o Celular com DDD" required="required" maxlength="11" onfocus="retirarFormatacaoTelefone(this)" onblur="formatarTelefone(this);">
-              </div>
-            </div>
-          </div>
-          <div class="form-group col-md-10 p-3">
-            <label for="representantelegal" class="required">Nome do Representante Legal:</label>
-            <input type="text" class="form-control" id="representantelegal" placeholder="Insira o Nome do Representante Legal" required="required">
-          </div>
-          <div class="form-group col-md-10 p-3">
-            <label for="emailrepresentantelegal" class="required">E-mail do Representante Legal:</label>
-            <input type="email" class="form-control" id="emailrepresentantelegal" placeholder="Insira o E-mail do Representante Legal" required="required" >
-          </div>
-          <div class="form-group col-md-10 p-3">
-            <label for="site">Site:</label>
-            <input type="text" class="form-control" id="site" placeholder="Insira o Site">
+    <div class="container ">
+      <img src="img/BrIT.png" alt="logo" style="max-width:180px"> 
+      <!-- <br> -->
+      <h3 style="text-align:center;color: darkblue;">O BRASIL IT+ ESTÁ NO AR!</h3>
+      <p style="text-align:center;">Quais inspirações vão movimentar o seu negócio em 2022/2023?<br>
+        Faça agora a sua adesão ao Brasil IT+ e se beneficie dos nossos conteúdos, treinamentos e eventos.</p>
+          <h6 style="text-align: center;" >Planos disponíveis: 
+          <br> </h6>
+      <div class="row">
+        <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
+          <div class="radio">
+            <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()"><span style="margin-left: 5px;">Free</label></h5>
           </div>
           
+          <ul style="list-style: square;">
+            <li>Conteúdos exclusivos</li>
+            <li>Diagnóstico de maturidade internacional</li>
+            <li>Estudos de mercado (Market Guides)</li>
+            <li>Bootcamps online</li>
+            <li>Conexão com potenciais parceiros internacionais</li>
+          </ul>
+          <br><br><br>
+          <h5 style="align=center" style="background-color: rgba(139, 135, 135, 0.13)" >Grátis
+          </h5>
+        </div>
+        <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
+          <div class="radio" >
+            <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+          </div>
+          <ul>
+            <li>Benefícios plano Free</li>
+            <li>Feiras internacionais</li>
+            <li>Missões internacionais online e presenciais</li>
+            <li>Imersão em mercados internacionais</li>
+            <li>Rodadas de negócios (matchmaking)</li>
+          </ul>
+          <table class="table table-striped table-bordered">
+            <thead class='table-light'>
+              <tr style="text-align:center;">
+                <th>Faixa de faturamento da empresa</th>
+                <th>Valor Mensal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  <div class="radio">
+                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+                  </div>
+                </th>
+                <td style="text-align:right">R$ 330,18</td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="radio">
+                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+                  </div>
+                </th>
+                <td style="text-align:right">R$ 550,30</td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="radio">
+                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+                  </div>
+                </th>
+                <td style="text-align:right">R$ 1.100,60</td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="radio">
+                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+                  </div>
+                </th>
+                <td style="text-align:right">R$ 1.981,08</td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="radio">
+                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+                  </div>
+                </th>
+                <td style="text-align:right">R$ 3.301,80</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <p>
+          Valores / faixa de faturamento da empresa: <br>
+          Até 1 milhão - R$ 330,18 <br>
+          De R$ 1 milhão a R$ 6 milhões - R$ 550,30 <br>
+          De R$ 6 milhões a R$ 20 milhões - R$ 1.100,60 <br>
+          De R$ 20 milhões a R$ 35 milhões - R$ 1.981,08 <br>
+          Acima de R$ 35 milhões - R$ 3.301,80 </p><br> -->
+        </div>
+      </div>
+        <div style="text-align: center;">
+          <p>No plano PREMIUM, o Brasil IT+ pode garantir até 80%* de subsídio na participação de sua empresa em eventos internacionais.<br>
+          * Considerando o evento mais caro do nosso portfólio e mensalidade mais baixa.</p>
+          <p>Em dúvida de qual plano escolher? Entre em contato conosco: internacional@softex.br <br>
+          Mais informações: <a href="https://brasilitplus.com/">https://brasilitplus.com/</a>
+          <br> 
+          </p>
+        </div>
+      <!-- </div>
+      <div class="container"> -->
+      <form>
+        <div class="form-group col-md-12 p-3">
+          <label for="razaosocial" class="required">Razão Social:</label>
+          <input type="text" class="form-control" id="razaosocial" placeholder="Insira a Razão Social" required="required">
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group p-3">
+              <label for="cnpj" class="required">CNPJ (somente números):</label>
+              <input type="text" class="form-control" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="form-group p-3">
+              <label for="empresa" class="required">Nome Fantasia:</label>
+              <input type="text" class="form-control" id="empresa" placeholder="Insira a Empresa" required="required">
+            </div><br>
+          </div>
+        </div>
+        <fieldset class="form-group col-md-12 border p-3 display: inline-block">
+          <legend><h5>ENDEREÇO COMERCIAL</h5></legend>
+          <div class="form-group col-md-3 p-3">
+            <label for="cep" class="required">CEP (somente números):</label>
+            <input type="text" class="form-control" id="cep" placeholder="Insira o CEP" required="required" value="" size="10" onfocus="retirarFormatacaoCep(this)" onblur="pesquisacep(this.value);formatarCep(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
+          </div>
           <div class="row">
+            <div class="col-md-5">
+              <div class="form-group p-3">
+                <label for="logradouro" class="required">Logradouro:</label>
+                <input type="text" class="form-control" id="logradouro" placeholder="Insira o Logradouro" required="required">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group p-3">
+                <label for="numero" class="required">Número:</label>
+                <input type="text" class="form-control" id="numero" placeholder="Insira o Número" required="required" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <div class="form-group p-3">
+                <label for="numero">S/N:</label><br>
+                <input type="checkbox" id="semnumero" onclick="semnum()">
+              </div>
+            </div>
             <div class="col-md-3">
               <div class="form-group p-3">
-                <label for="rg">RG:</label>
-                <input type="text" class="form-control" id="rg" placeholder="Insira o RG" required="required">
+                <label for="complemento">Complemento:</label>
+                <input type="text" class="form-control" id="complemento" placeholder="Insira o Complemento">
               </div>
             </div>
-            <div class="col-md-3">  
+          </div>
+          <div class="row">
+            <div class="col-md-9">
               <div class="form-group p-3">
-                <label for="orgaoexpedidoruf">Órgão expedidor/UF:</label>
-                <input type="text" class="form-control" id="orgaoexpedidoruf" placeholder="Insira o Órgão expedidor/UF" required="required">
+                <label for="cidade" class="required">Cidade:</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Insira a Cidade:" required="required">
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="form-group p-3">
-                <label for="cpf" class="required">CPF (somente números):</label>
-                <input type="text" class="form-control" id="cpf" placeholder="Insira o CPF" required="required" onfocus="retirarFormatacao(this)" onblur="validarCPF(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
+                <label for="estado" class="required">Estado:</label>
+                <br>
+                <select class="form-control" id="estado" name="Estado:" required="required">
+                  <option value="">Selecione</option>
+                  <option value="AC">AC</option>
+                  <option value="AL">AL</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="DF">DF</option>
+                  <option value="ES">ES</option>
+                  <option value="GO">GO</option>
+                  <option value="MA">MA</option>
+                  <option value="MS">MS</option>
+                  <option value="MT">MT</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="PB">PB</option>
+                  <option value="PR">PR</option>
+                  <option value="PE">PE</option>
+                  <option value="PI">PI</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="RS">RS</option>
+                  <option value="RO">RO</option>
+                  <option value="RR">RR</option>
+                  <option value="SC">SC</option>
+                  <option value="SP">SP</option>
+                  <option value="SE">SE</option>
+                  <option value="TO">TO</option>
+                </select>
+
+              
               </div>
             </div>
           </div>
-          <div class="form-group col-md-6 p-3">
-            <p style="margin-bottom: 0px;" class="required">Indique o plano de assinatura que deseja:</p>
-              <div class="radio">
-                <label><input type="radio" name="plano"><span style="margin-left: 5px;">Free</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="plano"><span style="margin-left: 5px;" ></span>Premium (recomendado)</label>
-              </div>
+        </fieldset>
+
+
+
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group p-3">
+              <label for="telefonecomercial" class="required">Telefone Comercial com DDD (somente números):</label>
+              <input type="text" class="form-control" id="telefonecomercial" placeholder="Insira o Telefone Comercial com DDD" maxlength="11" onfocus="retirarFormatacaoTelefone(this)" onblur="formatarTelefone(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
           </div>
-          <div class="form-group col-md-6 p-3">
-            <p style="margin-bottom: 0px;" class="required">Faturamento da empresa em 2021:</p>
-              <div class="radio">
-                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
-              </div>
+          <div class="col-md-6">
+            <div class="form-group p-3">
+              <label for="celular" class="required">Celular com DDD (somente números):</label>
+              <input type="text" class="form-control" id="celular" placeholder="Insira o Celular com DDD" required="required" maxlength="11" onfocus="retirarFormatacaoTelefone(this)" onblur="formatarTelefone(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            </div>
           </div>
-          <br>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Solicitar</button>
+        </div>
+        <div class="form-group col-md-12 p-3">
+          <label for="representantelegal" class="required">Nome do Representante Legal:</label>
+          <input type="text" class="form-control" id="representantelegal" placeholder="Insira o Nome do Representante Legal" required="required">
+        </div>
+        <div class="form-group col-md-12 p-3">
+          <label for="emailrepresentantelegal" class="required">E-mail do Representante Legal:</label>
+          <input type="email" class="form-control" id="email" placeholder="Insira o E-mail do Representante Legal" required="required" onfocus="apagamsg()" onblur="validacaoEmail(this);">
+          <div id="msgemail"></div>
+        </div>
+        <div class="form-group col-md-12 p-3">
+          <label for="site" class="required">Site:</label>
+          <input type="text" class="form-control" id="site" placeholder="Insira o Site">
+        </div>
+        
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group p-3">
+              <label for="rg" class="required">RG:</label>
+              <input type="text" class="form-control" id="rg" placeholder="Insira o RG" required="required">
+            </div>
+          </div>
+          <div class="col-md-4">  
+            <div class="form-group p-3">
+              <label for="orgaoexpedidoruf" class="required">Órgão expedidor/UF:</label>
+              <input type="text" class="form-control" id="orgaoexpedidoruf" placeholder="Insira o Órgão expedidor/UF" required="required">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group p-3">
+              <label for="cpf" class="required">CPF (somente números):</label>
+              <input type="text" class="form-control" id="cpf" placeholder="Insira o CPF" required="required" onfocus="retirarFormatacao(this)" onblur="validarCPF(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="11">
+            </div>
+          </div>
+        </div>
+        <br>
+        <fieldset class="form-group col-md-12 border p-3 display: inline-block">
+        <div class="col-md-12">  
+          <div class="form-group p-1">
+            <p> Os dados coletados neste formulário foram concedidos de forma voluntária, para que seja possível conhecer melhor as necessidades das empresas participantes do Projeto Brasil IT+</p>
+            <p>A Softex trabalha de acordo com as regras da LGPD.</p>
+            <input type="checkbox" id="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
+            <label for="concordo" class="required">Concordo</label>
+          </div>
+        </div>
+      </fieldset>
+        <!-- <div class="form-group col-md-6 p-3">
+          <p style="margin-bottom: 0px;" class="required">Indique o plano de assinatura que deseja:</p>
+            <div class="radio">
+              <label><input type="radio" name="plano"><span style="margin-left: 5px;">Free</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="plano"><span style="margin-left: 5px;" ></span>Premium (recomendado)</label>
+            </div>
+        </div> -->
+        <!-- <div class="form-group col-md-6 p-3">
+          <p style="margin-bottom: 0px;" class="required">Faturamento da empresa em 2021:</p>
+            <div class="radio">
+              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+            </div>
+        </div> -->
+        <br>
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 50%">Solicitar</button>
           <br><br>
-          <h5>Brasil IT+</h5>
-        </form>
-      </div>
-       
+          <h5 style="color: blue;">Brasil IT+</h5>
+        </div>
+      </form>
+    </div>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/cep.js"></script>
       <script src="js/cpf.js"></script>
       <script src="js/cnpj.js"></script>
       <script src="js/mascaras.js"></script>
+      <script src="js/check_num.js"></script>
+      <script src="js/email.js"></script>
+      <script src="js/planos.js"></script>
 
       
       
