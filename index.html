@@ -11,110 +11,112 @@
 </head>
 <body>
     <br>
+    <!-- logo -->
     <div class="container ">
       <img src="img/BrIT.png" alt="logo" style="max-width:180px"> 
-      <!-- <br> -->
+      <!-- texto inicial -->
       <h3 style="text-align:center;color: darkblue;">O BRASIL IT+ ESTÁ NO AR!</h3>
       <p style="text-align:center;">Quais inspirações vão movimentar o seu negócio em 2022/2023?<br>
         Faça agora a sua adesão ao Brasil IT+ e se beneficie dos nossos conteúdos, treinamentos e eventos.</p>
-          <h6 style="text-align: center;" >Planos disponíveis: 
+          <h6 style="text-align: center;" >Selecione um dos planos disponíveis: 
           <br> </h6>
-      <div class="row">
-        <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
-          <div class="radio">
-            <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()"><span style="margin-left: 5px;">Free</label></h5>
+      <!-- planos -->
+      <form>
+        <div class="row">
+          <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
+            <div class="radio">
+              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()" required><span style="margin-left: 5px;">Free</label></h5>
+            </div>
+            <ul style="list-style: square;">
+              <li>Conteúdos exclusivos</li>
+              <li>Diagnóstico de maturidade internacional</li>
+              <li>Estudos de mercado (Market Guides)</li>
+              <li>Bootcamps online</li>
+              <li>Conexão com potenciais parceiros internacionais</li>
+            </ul>
+            <br><br><br>
+            <h5 style="text-align:center; background-color: rgba(139, 135, 135, 0.13)">Grátis</h5>
           </div>
-          <ul style="list-style: square;">
-            <li>Conteúdos exclusivos</li>
-            <li>Diagnóstico de maturidade internacional</li>
-            <li>Estudos de mercado (Market Guides)</li>
-            <li>Bootcamps online</li>
-            <li>Conexão com potenciais parceiros internacionais</li>
-          </ul>
-          <br><br><br>
-          <h5 style="text-align:center; background-color: rgba(139, 135, 135, 0.13)">Grátis</h5>
-        </div>
-        <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
-          <div class="radio" >
-            <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+          <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
+            <div class="radio" >
+              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+            </div>
+            <ul>
+              <li>Benefícios plano Free</li>
+              <li>Feiras internacionais</li>
+              <li>Missões internacionais online e presenciais</li>
+              <li>Imersão em mercados internacionais</li>
+              <li>Rodadas de negócios (matchmaking)</li>
+            </ul>
+            <table class="table table-striped table-bordered">
+              <thead class='table-light'>
+                <tr style="text-align:center;">
+                  <th>Faixa de faturamento da empresa</th>
+                  <th>Valor Mensal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>
+                    <div class="radio">
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" required><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+                    </div>
+                  </th>
+                  <td style="text-align:right">R$ 330,18</td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="radio">
+                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+                    </div>
+                  </th>
+                  <td style="text-align:right">R$ 550,30</td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="radio">
+                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+                    </div>
+                  </th>
+                  <td style="text-align:right">R$ 1.100,60</td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="radio">
+                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+                    </div>
+                  </th>
+                  <td style="text-align:right">R$ 1.981,08</td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="radio">
+                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+                    </div>
+                  </th>
+                  <td style="text-align:right">R$ 3.301,80</td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- <p>
+            Valores / faixa de faturamento da empresa: <br>
+            Até 1 milhão - R$ 330,18 <br>
+            De R$ 1 milhão a R$ 6 milhões - R$ 550,30 <br>
+            De R$ 6 milhões a R$ 20 milhões - R$ 1.100,60 <br>
+            De R$ 20 milhões a R$ 35 milhões - R$ 1.981,08 <br>
+            Acima de R$ 35 milhões - R$ 3.301,80 </p><br> -->
           </div>
-          <ul>
-            <li>Benefícios plano Free</li>
-            <li>Feiras internacionais</li>
-            <li>Missões internacionais online e presenciais</li>
-            <li>Imersão em mercados internacionais</li>
-            <li>Rodadas de negócios (matchmaking)</li>
-          </ul>
-          <table class="table table-striped table-bordered">
-            <thead class='table-light'>
-              <tr style="text-align:center;">
-                <th>Faixa de faturamento da empresa</th>
-                <th>Valor Mensal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>
-                  <div class="radio">
-                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
-                  </div>
-                </th>
-                <td style="text-align:right">R$ 330,18</td>
-              </tr>
-              <tr>
-                <th>
-                  <div class="radio">
-                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
-                  </div>
-                </th>
-                <td style="text-align:right">R$ 550,30</td>
-              </tr>
-              <tr>
-                <th>
-                  <div class="radio">
-                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
-                  </div>
-                </th>
-                <td style="text-align:right">R$ 1.100,60</td>
-              </tr>
-              <tr>
-                <th>
-                  <div class="radio">
-                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
-                  </div>
-                </th>
-                <td style="text-align:right">R$ 1.981,08</td>
-              </tr>
-              <tr>
-                <th>
-                  <div class="radio">
-                    <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
-                  </div>
-                </th>
-                <td style="text-align:right">R$ 3.301,80</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- <p>
-          Valores / faixa de faturamento da empresa: <br>
-          Até 1 milhão - R$ 330,18 <br>
-          De R$ 1 milhão a R$ 6 milhões - R$ 550,30 <br>
-          De R$ 6 milhões a R$ 20 milhões - R$ 1.100,60 <br>
-          De R$ 20 milhões a R$ 35 milhões - R$ 1.981,08 <br>
-          Acima de R$ 35 milhões - R$ 3.301,80 </p><br> -->
         </div>
-      </div>
-        <div style="text-align: center;">
-          <p>No plano PREMIUM, o Brasil IT+ pode garantir até 80%* de subsídio na participação de sua empresa em eventos internacionais.<br>
-          * Considerando o evento mais caro do nosso portfólio e mensalidade mais baixa.</p>
-          <p>Em dúvida de qual plano escolher? Entre em contato conosco: internacional@softex.br <br>
-          Mais informações: <a href="https://brasilitplus.com/" target="_blank">https://brasilitplus.com/</a>
-          <br> 
-          </p>
-        </div>
+          <div style="text-align: center;">
+            <p>No plano PREMIUM, o Brasil IT+ pode garantir até 80%* de subsídio na participação de sua empresa em eventos internacionais.<br>
+            * Considerando o evento mais caro do nosso portfólio e mensalidade mais baixa.</p>
+            <p>Em dúvida de qual plano escolher? Entre em contato conosco: internacional@softex.br <br>
+            Mais informações: <a href="https://brasilitplus.com/" target="_blank">https://brasilitplus.com/</a>
+            <br> 
+            </p>
+          </div>
       <!-- </div>
       <div class="container"> -->
-      <form>
         <div class="form-group col-md-12 p-3">
           <label for="razaosocial" class="required">Razão Social:</label>
           <input type="text" class="form-control" name="razaosocial" id="razaosocial" placeholder="Insira a Razão Social" required="required">
@@ -265,15 +267,15 @@
         </fieldset>
         <br>
         <fieldset class="form-group col-md-12 border p-3 display: inline-block">
-        <div class="col-md-12">  
-          <div class="form-group p-1">
-            <p> Os dados coletados neste formulário foram concedidos de forma voluntária, para que seja possível conhecer melhor as necessidades das empresas participantes do Projeto Brasil IT+</p>
-            <p>A Softex trabalha de acordo com as regras da LGPD.</p>
-            <input type="checkbox" name="concordo" id="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
-            <label for="concordo" class="required">Concordo</label>
+          <div class="col-md-12">  
+            <div class="form-group p-1">
+              <p> Os dados coletados neste formulário foram concedidos de forma voluntária, para que seja possível conhecer melhor as necessidades das empresas participantes do Projeto Brasil IT+</p>
+              <p>A Softex trabalha de acordo com as regras da LGPD.</p>
+              <input type="checkbox" name="concordo" id="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
+              <label for="concordo" class="required">Concordo</label>
+            </div>
           </div>
-        </div>
-      </fieldset>
+        </fieldset>
         <!-- <div class="form-group col-md-6 p-3">
           <p style="margin-bottom: 0px;" class="required">Indique o plano de assinatura que deseja:</p>
             <div class="radio">
