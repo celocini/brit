@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
             <div class="radio">
-              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()" required><span style="margin-left: 5px;">Free</label></h5>
+              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()" value="Free" required><span style="margin-left: 5px;">Free</label></h5>
             </div>
             <ul style="list-style: square;">
               <li>Conteúdos exclusivos</li>
@@ -39,7 +39,7 @@
           </div>
           <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
             <div class="radio" >
-              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()" value="Premium"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
             </div>
             <ul>
               <li>Benefícios plano Free</li>
@@ -59,7 +59,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" required><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" required value="Até R$ 1 milhão"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 330,18</td>
@@ -67,7 +67,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 1 milhão a R$ 6 milhões"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 550,30</td>
@@ -75,7 +75,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 6 milhões a R$ 20 milhões"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.100,60</td>
@@ -83,7 +83,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 20 milhões a R$ 35 milhões"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.981,08</td>
@@ -91,7 +91,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="Acima de R$ 35 milhões"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 3.301,80</td>
@@ -271,7 +271,7 @@
             <div class="form-group p-1">
               <p> Os dados coletados neste formulário foram concedidos de forma voluntária, para que seja possível conhecer melhor as necessidades das empresas participantes do Projeto Brasil IT+</p>
               <p>A Softex trabalha de acordo com as regras da LGPD.</p>
-              <input type="checkbox" name="concordo" id="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
+              <input type="checkbox" name="concordo" id="concordo" value="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
               <label for="concordo" class="required">Concordo</label>
             </div>
           </div>
