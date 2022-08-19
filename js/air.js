@@ -14,7 +14,6 @@ axios.post('https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6',
     "fldokU6xSwyIQlBt2":document.getElementById("razaosocial").value,
     "flds3Fcw3IS230KOM":document.getElementById("cnpj").value,
     "fldxjQb1xBHM6znsa":document.getElementById("empresa").value,
-    "fldpyusNg56DtAxT3":document.querySelector('input[name="plano"]:checked').value,
     "fldC2P8pFRQOq0LA2":document.getElementById("cep").value,
     "fld3zEgAyRid3lfBo":document.getElementById("logradouro").value,
 
