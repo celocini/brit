@@ -10,3 +10,8 @@ body{
   .table{
     font-size:small;
   }
+
+.expande{
+    cursor: pointer;
+}
+}
