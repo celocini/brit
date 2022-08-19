@@ -8,6 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css.map" rel="stylesheet">
     <link href="css/detalhes.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <br>
@@ -21,11 +22,11 @@
           <h6 style="text-align: center;" >Selecione um dos planos disponíveis: 
           <br> </h6>
       <!-- planos -->
-      <form>
+      <form id="adesao">
         <div class="row">
           <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
             <div class="radio">
-              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" onclick="free()" value="Free" required><span style="margin-left: 5px;">Free</label></h5>
+              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(207, 235, 247);"><label><input type="radio" name="plano" id="plano" onclick="free()" value="Free" required><span style="margin-left: 5px;">Free</label></h5>
             </div>
             <ul style="list-style: square;">
               <li>Conteúdos exclusivos</li>
@@ -39,7 +40,7 @@
           </div>
           <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
             <div class="radio" >
-              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" onclick="premium()" value="Premium"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:darkblue;"><label><input type="radio" name="plano" id="plano" onclick="premium()" value="Premium"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
             </div>
             <ul>
               <li>Benefícios plano Free</li>
@@ -59,7 +60,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" required value="Até R$ 1 milhão"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" required value="Até R$ 1 milhão"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 330,18</td>
@@ -67,7 +68,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 1 milhão a R$ 6 milhões"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 1 milhão a R$ 6 milhões"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 550,30</td>
@@ -75,7 +76,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 6 milhões a R$ 20 milhões"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 6 milhões a R$ 20 milhões"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.100,60</td>
@@ -83,7 +84,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="De R$ 20 milhões a R$ 35 milhões"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 20 milhões a R$ 35 milhões"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.981,08</td>
@@ -91,20 +92,13 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" onclick="setpremium()" value="Acima de R$ 35 milhões"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="Acima de R$ 35 milhões"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 3.301,80</td>
                 </tr>
               </tbody>
             </table>
-            <!-- <p>
-            Valores / faixa de faturamento da empresa: <br>
-            Até 1 milhão - R$ 330,18 <br>
-            De R$ 1 milhão a R$ 6 milhões - R$ 550,30 <br>
-            De R$ 6 milhões a R$ 20 milhões - R$ 1.100,60 <br>
-            De R$ 20 milhões a R$ 35 milhões - R$ 1.981,08 <br>
-            Acima de R$ 35 milhões - R$ 3.301,80 </p><br> -->
           </div>
         </div>
           <div style="text-align: center;">
@@ -115,8 +109,10 @@
             <br> 
             </p>
           </div>
-      <!-- </div>
-      <div class="container"> -->
+        <div class="form-group col-md-12 p-3">
+          <label for="fat">fat</label>
+          <input type="text" class="form-control" name="fat" id="fat">
+        </div>
         <div class="form-group col-md-12 p-3">
           <label for="razaosocial" class="required">Razão Social:</label>
           <input type="text" class="form-control" name="razaosocial" id="razaosocial" placeholder="Insira a Razão Social" required="required">
@@ -271,38 +267,11 @@
             <div class="form-group p-1">
               <p> Os dados coletados neste formulário foram concedidos de forma voluntária, para que seja possível conhecer melhor as necessidades das empresas participantes do Projeto Brasil IT+</p>
               <p>A Softex trabalha de acordo com as regras da LGPD.</p>
-              <input type="checkbox" name="concordo" id="concordo" value="concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
+              <input type="checkbox" name="concordo" id="concordo" value="Concordo" required="required" style="vertical-align: top; margin:6px 6px 0px 0">
               <label for="concordo" class="required">Concordo</label>
             </div>
           </div>
         </fieldset>
-        <!-- <div class="form-group col-md-6 p-3">
-          <p style="margin-bottom: 0px;" class="required">Indique o plano de assinatura que deseja:</p>
-            <div class="radio">
-              <label><input type="radio" name="plano"><span style="margin-left: 5px;">Free</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="plano"><span style="margin-left: 5px;" ></span>Premium (recomendado)</label>
-            </div>
-        </div> -->
-        <!-- <div class="form-group col-md-6 p-3">
-          <p style="margin-bottom: 0px;" class="required">Faturamento da empresa em 2021:</p>
-            <div class="radio">
-              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
-            </div>
-            <div class="radio">
-              <label><input type="radio" name="faturamento"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
-            </div>
-        </div> -->
         <br>
         <div style="text-align: center;">
           <button type="submit" onclick="expande_end(); expande_rep()" class="btn btn-primary btn-lg btn-block" style="width: 50%">Solicitar</button>
@@ -311,7 +280,10 @@
         </div>
       </form>
     </div>
+      <!-- genéricos -->
       <script src="js/bootstrap.min.js"></script>
+      <script src="js/expande.js"></script>
+      <!-- específicos -->
       <script src="js/cep.js"></script>
       <script src="js/cpf.js"></script>
       <script src="js/cnpj.js"></script>
@@ -320,6 +292,10 @@
       <script src="js/email.js"></script>
       <script src="js/planos.js"></script>
       <script src="js/expande.js"></script>
+      <script src="js/air.js"></script>
+      
+
+
 
       
       
