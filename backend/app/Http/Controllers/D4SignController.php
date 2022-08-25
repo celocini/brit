@@ -13,4 +13,10 @@ class D4SignController extends Controller
         dd($doc);
         dd($doc[1]->name);
     }
+    public function documento(Request $request) {
+        $docs = (string) D4Sign::templates()->find()->getBody();
+        $doc = (array)json_decode($docs);
+        dd($doc);
+        dd($doc[1]->name);
+    }
 }
