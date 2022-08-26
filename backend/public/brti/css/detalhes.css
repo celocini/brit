@@ -1,0 +1,16 @@
+body{
+  background-color:rgb(250, 250, 250);
+}
+
+.required:after {
+    content:" *"; 
+    color: red;
+  }
+
+  .table{
+    font-size:small;
+  }
+
+.expande{
+    cursor: pointer;
+}

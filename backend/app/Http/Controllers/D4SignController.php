@@ -38,39 +38,17 @@ class D4SignController extends Controller
 
     public function getBaseUri($uri = '')
     {
-        $baseUri = config('d4sign.mode') === 'production' ? self::ENV_PRODUCTION : self::ENV_SANDBOX;
+        $baseUri = config('d4sign.mode') === 'producao' ? self::ENV_PRODUCTION : self::ENV_SANDBOX;
         return $baseUri . $uri;
     }
 
     public function index() { 
-        //$response = Http::get('http://example.com');
-        /*$response = Http::withHeaders([
-            'Accept'   => 'application/json',
-            'tokenAPI' => $this->token_api,
-            'cryptKey' => $this->crypt_key
-        ])->get($this->getBaseUri('safes'), [
-            'id_template'=> ''
-        ]);
-        */
-
-        $response = Http::withHeaders($this->headers)->get($this->getBaseUri('safes'));
-
-        return response()->json(
-            $response->object()
-        , 200);
-
-        // $docs = (string) D4Sign::templates()->find()->getBody();
-        // $doc = (array)json_decode($docs);
-        // dd($doc[1]->name);
+        echo ''; exit;
     }
     public function documento(Request $request) {
+        $dados = (object)$request->all();
 
-        $temObj = new \stdClass();
-        $temObj->cnpj = '789211222'; 
-        $temObj->razao = 'TESTE PHP'; 
-        $temObj->endereco = 'TESTE ENDE PHP'; 
-
-        $obj_send = $this->createDocument($temObj);
+        $obj_send = $this->createDocument($dados);
         
         $response = Http::withHeaders($this->headers)
                     ->withBody(
@@ -79,47 +57,118 @@ class D4SignController extends Controller
                     ->post($this->getBaseUri('documents/'.$this->cofre.'/makedocumentbytemplateword'));
         
         $document_uuid = $response->object()->uuid;
+        if($document_uuid != '') {
+            $this->addSigners($dados, $document_uuid);
+            $this->sendToSign($document_uuid);
+            $this->sendWebHook($document_uuid);
+        }
 
-        //dd($document_uuid);
         return response()->json(
             $response->object()
         , 200);
     }
+    public function addSigners($dados, $document_uuid) {
+        $signer = new \stdClass();
+
+        $signer->email = $dados->email;
+        $signer->act = "1";
+        $signer->foreign = "0";
+        $signer->certificadoicpbr = "0";
+        $signer->assinatura_presencial = "0";
+        $signer->docauth = "0";
+        $signer->docauthandselfie = "0";
+        $signer->embed_methodauth = "email";
+        $signer->embed_smsnumber = "";
+        $signer->upload_allow = "0";
+
+        $signers = ['signers' => [$signer]];
+
+        $response = Http::withHeaders($this->headers)
+                    ->withBody(
+                        json_encode($signers), 'application/json'
+                    )
+                    ->post($this->getBaseUri('documents/'.$document_uuid.'/createlist'));
+
+    }
+    public function sendToSign($document_uuid) {
+        $sign = new \stdClass();
+
+        $sign->message = "Recebemos um documento que necessita de sua assinatura. Por favor, prossiga com os passos deste e-mail.";
+        $sign->skip_email = "0";
+        $sign->workflow = "";
+        $sign->tokenAPI = $this->token_api;
+ 
+        $response = Http::withHeaders($this->headers)
+                    ->withBody(
+                        json_encode($sign), 'application/json'
+                    )
+                    ->post($this->getBaseUri('documents/'.$document_uuid.'/sendtosigner'));
+
+    }
+    public function sendWebHook($document_uuid) {
+        $url = new \stdClass();
+
+        $url->url = 'https://brit.softex.br/brit/api/documento_webhook/' . $document_uuid;
+
+        $response = Http::withHeaders($this->headers)
+                    ->withBody(
+                        json_encode($url), 'application/json'
+                    )
+                    ->post($this->getBaseUri('documents/'.$document_uuid.'/webhooks'));
+
+    }
     public function createDocument($dados) {
 
-        // {
-        //     "razao_social": "",
-        //     "cnpj": "",
-        //     "nome_fantasia": "",
-        //     "endereco": "",
-        //     "estado": "",
-        //     "cep": "",
-        //     "telefone": "",
-        //     "email": "",
-        //     "website": "",
-        //     "nome_completo": "",
-        //     "cpf": "",
-        //     "rg": "",
-        //     "org_exp_uf": "",
-        //     "celular": ""
-        // }
-
-
         $temObj = new \stdClass();
-        $temObj->cnpj = $dados->cnpj;//'789211222'; 
-        $temObj->razao = $dados->razao;//'TESTE PHP'; 
-        $temObj->endereco = $dados->endereco;//'TESTE ENDE PHP'; 
+
+        $temObj->razao_social = $dados->razao_social;
+        $temObj->cnpj = $dados->cnpj;
+        $temObj->nome_fantasia = $dados->nome_fantasia;
+        $temObj->endereco = $dados->endereco;
+        $temObj->estado = $dados->estado;
+        $temObj->cep = $dados->cep;
+        $temObj->telefone = $dados->telefone; 
+        $temObj->email = $dados->email;
+        $temObj->website = $dados->website;
+        $temObj->nome_completo = $dados->nome_completo;
+
+        $temObj->cpf = $dados->cpf;
+        $temObj->rg = $dados->rg;
+        $temObj->org_exp_uf = $dados->org_exp_uf;
+        $temObj->celular = $dados->celular;
 
         $temp = [];
 
         $temp[$this->template] = $temObj;
 
         $obj = new \stdClass();
-
-        $obj->name_document = "Nome do documento test";
+         $date = date('d-m-Y H-m-s');
+        $obj->name_document = "Brasil IT + - ". $dados->razao_social . " - " . $date;
         $obj->uuid_folder = "";
         $obj->templates = $temp;
 
         return $obj;
+    }
+    public function documento_webhook($document_uuid) {
+        $obj = new \stdClass();
+
+        //$obj->id =  
+
+        /*
+            "id": "recKfJttFzLwzGWDd",
+            "fields": {
+            "RazaoSocial": "bb"
+            }*/
+
+
+        // $response = Http::withHeaders([
+        //     'Authorization' => 'Bearer keyNEmaNWdysrYOjr',
+        //     'Content-Type' => 'application/json'
+        // ])
+        // ->withBody(
+        //     json_encode($url), 'application/json'
+        // )
+        // ->post("https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6");
+
     }
 }
