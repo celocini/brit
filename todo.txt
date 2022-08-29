@@ -1,0 +1,5 @@
+Não esquecer de alterar o arquivo env para produção
+
+Não esquecer de alterar as rotas da api em air.js
+
+Não esquecer de alterar os valores do env para o arquivo
