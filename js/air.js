@@ -5,7 +5,9 @@ const headers_ = {
 };
 // When the form is submitted...
 thisForm.addEventListener("submit", function(event) {
-   event.preventDefault();
+  // Mostrando o loading
+  show_loading()
+  event.preventDefault();
 // POST the data
 // o sufixo tblVjW7bR49CiQhG6 é o id da tabela TA
 axios.post('https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6',
@@ -43,8 +45,16 @@ axios.post('https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6',
 )
 .then((resp) => {
   console.log("successo!")
+  // Escondendo o loading
+  hide_loading()
+  // Resetando o formulário
+  thisForm.reset()
+  // Mensagem de sucesso
+  submit_sucesso()
 })
 .catch(function (error) {
   console.log(error);
+  // Mensagen de erro
+  submit_erro()
 });
 });
