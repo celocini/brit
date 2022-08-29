@@ -273,12 +273,19 @@
         </fieldset>
         <br>
         <div style="text-align: center;">
-          <button type="submit" onclick="expande_end(); expande_rep()" class="btn btn-primary btn-lg btn-block" style="width: 50%">Solicitar</button>
+          <button type="submit" onclick="expande_end(); expande_rep();" class="btn btn-primary btn-lg btn-block" style="width: 50%">
+            <span id = "button_text">Solicitar</span>
+            <div class="loading"></div>
+          </button>          
           <br><br>
           <h5 style="color: blue;">Brasil IT+</h5>
         </div>
       </form>
     </div>
+      <!-- Scripts para a mensagem de sucesso pós submissão -->
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="./brti/js/alerta_submit.js"></script>
+
       <!-- genéricos -->
       <script src="./brti/js/bootstrap.min.js"></script>
       <script src="./brti/js/expande.js"></script>
@@ -291,12 +298,7 @@
       <script src="./brti/js/email.js"></script>
       <script src="./brti/js/planos.js"></script>
       <script src="./brti/js/expande.js"></script>
-      <script src="./brti/js/air.js"></script>
-      
-
-
-
-      
+      <script src="./brti/js/air.js"></script>    
       
 </body>
 </html>

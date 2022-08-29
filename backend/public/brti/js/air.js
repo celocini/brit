@@ -5,6 +5,7 @@ const headers_ = {
 };
 // When the form is submitted...
 thisForm.addEventListener("submit", function(event) {
+   show_loading()
    event.preventDefault();
 
    documento = {}
@@ -83,8 +84,11 @@ thisForm.addEventListener("submit", function(event) {
     .then((resp) => {
       documento_criado.id_airtable = resp.id
 
-      //redirecionar para sucesso
-      alert('Documento enviado com sucesso!')
+      // //redirecionar para sucesso
+      // alert('Documento enviado com sucesso!')
+      hide_loading()
+      thisForm.reset()
+      submit_sucesso()
       console.log("successo airtable!")
     })
     .catch(function (error) {
@@ -94,5 +98,6 @@ thisForm.addEventListener("submit", function(event) {
   })
   .catch(function (error) {
     console.log(error);
+    submit_erro()
   });
 });
