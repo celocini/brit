@@ -5,6 +5,7 @@ const headers_ = {
 };
 // When the form is submitted...
 thisForm.addEventListener("submit", function(event) {
+<<<<<<< HEAD
    event.preventDefault();
 
    documento = {}
@@ -38,6 +39,11 @@ thisForm.addEventListener("submit", function(event) {
    documento.endereco = `${documento.logradouro} ${documento.numero} ${documento.complemento}`
 
 
+=======
+  // Mostrando o loading
+  show_loading()
+  event.preventDefault();
+>>>>>>> 16501f834d99683f1a6953ac5cc6ee08a1dcdc2c
 // POST the data
 // o sufixo tblVjW7bR49CiQhG6 é o id da tabela TA
   axios.post('http://localhost:8085/api/documento', documento, {headers: headers_})// brit.brasilitplus.com
@@ -63,6 +69,7 @@ thisForm.addEventListener("submit", function(event) {
     //     "fldcZKOB3PuLGSPLW":documento.email,
     //     "fldOCibQrn89Ml99E":documento.website,
         
+<<<<<<< HEAD
     //     "fldp9kF9ySe4dZ0iU":documento.telefone,
     //     "fldNtzjxCrOTJ45h4":documento.celular,
     //     "flda0Mr4RdFyzu5oG":documento.cpf,
@@ -88,4 +95,23 @@ thisForm.addEventListener("submit", function(event) {
   .catch(function (error) {
     console.log(error);
   });
+=======
+}
+}, {headers: headers_}
+)
+.then((resp) => {
+  console.log("successo!")
+  // Escondendo o loading
+  hide_loading()
+  // Resetando o formulário
+  thisForm.reset()
+  // Mensagem de sucesso
+  submit_sucesso()
+})
+.catch(function (error) {
+  console.log(error);
+  // Mensagen de erro
+  submit_erro()
+});
+>>>>>>> 16501f834d99683f1a6953ac5cc6ee08a1dcdc2c
 });
