@@ -17,7 +17,7 @@ function hide_loading(){
 function submit_sucesso(){
     Swal.fire(
         'Sucesso',
-        'As informações foram enviadas com sucesso!',
+        'As informações foram enviadas com sucesso! Por favor, verifique seu e-mail para prosseguir com a assinatura do documento.',
         'success'
       ).then(function() {
         // Aqui é possível configurar o que acontece após clicar no OK na mensagem de sucesso

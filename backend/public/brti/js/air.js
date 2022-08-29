@@ -77,6 +77,7 @@ thisForm.addEventListener("submit", function(event) {
         "fldetKN923gTTZdw5":documento.fat,
         "fldXH7RwL96oeGinP":documento.concordo,
         "fldAyxwxRKAnSSVci":documento_criado.uuid,
+        "fldnwFK5UqL06XpAS":"Enviado",
             
     }
     }, {headers: headers_}

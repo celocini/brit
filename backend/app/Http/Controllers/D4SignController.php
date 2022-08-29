@@ -10,6 +10,7 @@ class D4SignController extends Controller
 {
     protected $client;
     protected $headers;
+    protected $headersAir;
 
     protected const ENV_PRODUCTION = 'https://secure.d4sign.com.br/api/v1/';
     protected const ENV_SANDBOX = 'https://sandbox.d4sign.com.br/api/v1/';
@@ -32,6 +33,12 @@ class D4SignController extends Controller
             'Accept'   => 'application/json',
             'tokenAPI' => $this->token_api,
             'cryptKey' => $this->crypt_key
+        ];
+
+        $this->headersAir = [
+            'Accept'   => 'application/json',
+            'Authorization' => 'Bearer keyNEmaNWdysrYOjr',
+            'Content-Type' => 'application/json'
         ];
     }
 
@@ -108,7 +115,7 @@ class D4SignController extends Controller
     public function sendWebHook($document_uuid) {
         $url = new \stdClass();
 
-        $url->url = 'https://brit.softex.br/brit/api/documento_webhook/' . $document_uuid;
+        $url->url = 'https://brit.softex.dev/api/documento_webhook/';
 
         $response = Http::withHeaders($this->headers)
                     ->withBody(
@@ -149,26 +156,59 @@ class D4SignController extends Controller
 
         return $obj;
     }
-    public function documento_webhook($document_uuid) {
-        $obj = new \stdClass();
+    public function documento_webhook(Request $request) {
 
-        //$obj->id =  
-
+        $dados = (object)$request->all();
         /*
-            "id": "recKfJttFzLwzGWDd",
-            "fields": {
-            "RazaoSocial": "bb"
-            }*/
+        Pendente
+        Cancelado
+        Assinado
+        */ 
+        $mensagem = "";
+
+        if($dados->type_post == "3") {
+            $mensagem = "Cancelado";
+        } else if($dados->type_post == "4") {
+            $mensagem = "Assinado";
+        } else if($dados->type_post == "1") {
+            $mensagem = "Assinado";
+        } else {
+            $mensagem = "Enviado";
+        }
+        $obj = new \stdClass();
+        $obj->document_uuid = $dados->uuid;
+
+        $response = Http::withHeaders($this->headersAir)
+                    ->withBody(
+                        json_encode($dados), 'application/json'
+                    )
+                    ->get("https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6?filterByFormula=({Id_D4} = '".$obj->document_uuid."')");
+        //$air = $response->records[0]->id;
+        $dados_air = json_decode($response->body());
+
+ 
 
 
-        // $response = Http::withHeaders([
-        //     'Authorization' => 'Bearer keyNEmaNWdysrYOjr',
-        //     'Content-Type' => 'application/json'
-        // ])
-        // ->withBody(
-        //     json_encode($url), 'application/json'
-        // )
-        // ->post("https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6");
+        if(!empty($dados_air->records)) {
+            $id_air = $dados_air->records[0]->id;
+
+            $objSend = new \stdClass();
+            $objDados = new \stdClass();
+            $objField = new \stdClass();
+            $objDados->id = $id_air;
+            $objField->Status = $mensagem;
+            $objDados->fields = $objField;
+            $objSend->records = [$objDados];
+            //print_r(json_encode($objSend)); exit;
+
+            $responseUpdate = Http::withHeaders($this->headersAir)
+                    ->withBody(
+                        json_encode($objSend), 'application/json'
+                    )
+                    ->patch("https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6");
+
+            echo print_r($responseUpdate->body());
+        }
 
     }
 }
