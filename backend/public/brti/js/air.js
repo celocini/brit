@@ -115,7 +115,7 @@ function verificaCNPJ(el) {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Esse CNPJ já possui solicitação de adesão, por favor entrar em contato com walter@softex.br',
+        text: 'Esse CNPJ já possui solicitação de adesão, por favor entrar em contato com internacional@softex.br',
       })
       botao_text.disabled = true
       el.value = "";
