@@ -46,7 +46,7 @@ thisForm.addEventListener("submit", function(event) {
   .then((resp) => {
     console.log('resp',resp)
     documento_criado.uuid = resp.data.uuid
-    console.log("successo outra vez!")
+  
     axios.post('https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6',
     {
       "fields": {
@@ -102,3 +102,30 @@ thisForm.addEventListener("submit", function(event) {
     submit_erro()
   });
 });
+
+function verificaCNPJ(el) {
+
+  axios.get(`https://api.airtable.com/v0/appV9hUETmlTsyQrg/tblVjW7bR49CiQhG6?filterByFormula=({CNPJ} = '${el.value}')`, {headers: headers_}
+  )
+  .then((resp) => {
+    let tem = resp.data.records.length
+
+    var botao_text = document.getElementById("button_text")
+    if(tem) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Esse CNPJ já possui solicitação de adesão, por favor entrar em contato com walter@softex.br',
+      })
+      botao_text.disabled = true
+      el.value = "";
+    } else {
+      botao_text.disabled = false
+    }
+    //console.log('dados airtable: ',resp.data.records.length);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+}

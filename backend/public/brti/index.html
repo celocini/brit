@@ -120,7 +120,7 @@
           <div class="col-md-4">
             <div class="form-group p-3">
               <label for="cnpj" class="required">CNPJ (somente números):</label>
-              <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
+              <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this);verificaCNPJ(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
             </div>
           </div>
           <div class="col-md-8">
