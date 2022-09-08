@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>O BRASIL IT+ ESTÁ NO AR!</title>
-    <link href="./brit/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./brit/css/bootstrap.min.css.map" rel="stylesheet">
-    <link href="./brit/css/detalhes.css" rel="stylesheet">
+    <link href="/brit/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/brit/css/bootstrap.min.css.map" rel="stylesheet"> -->
+    <link href="/brit/css/detalhes.css" rel="stylesheet">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <br>
     <!-- logo -->
     <div class="container">
-      <img src="./brit/img/BrIT.png" alt="logo" style="max-width:220px"> 
+      <img src="/brit/img/BrIT.png" alt="logo" style="max-width:220px"> 
       <!-- texto inicial -->
       <h3 style="text-align:center; color: rgb(0, 75, 255);">O BRASIL IT+ ESTÁ NO AR!</h3>
       <p style="text-align:center;">Quais inspirações vão movimentar o seu negócio em 2022/2023?<br>
@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-md-6" style="background-color: rgba(155, 153, 153, 0.144)">
             <div class="radio">
-              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(0, 255, 93);"><label><input type="radio" name="plano" id="plano" onclick="free()" value="Free" required><span style="margin-left: 5px;">Free</label></h5>
+              <h5 style="text-align:center;margin-top:10px;color:black; background-color: rgb(0, 255, 93);"><label><input type="radio" name="plano" id="plano1" onclick="free()" value="Free" required><span style="margin-left: 5px;">Free</label></h5>
             </div>
             <ul style="list-style: square;">
               <li>Conteúdos exclusivos</li>
@@ -40,7 +40,7 @@
           </div>
           <div class="col-md-6" style="background-color: rgba(231, 220, 220, 0.856)">
             <div class="radio" >
-              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:rgb(130, 28, 252);"><label><input type="radio" name="plano" id="plano" onclick="premium()" value="Premium"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
+              <h5 style="text-align: center;margin-top:10px;color:white ;background-color:rgb(130, 28, 252);"><label><input type="radio" name="plano" id="plano2" onclick="premium()" value="Premium"><span style="margin-left: 5px;"></span>Premium (recomendado)</label></h5>
             </div>
             <ul>
               <li>Benefícios plano Free</li>
@@ -60,7 +60,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" required value="Até R$ 1 milhão"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
+                      <label><input type="radio" name="faturamento" id="faturamento1" onclick="setpremium()" required value="Até R$ 1 milhão"><span style="margin-left: 5px;">Até R$ 1 milhão</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 330,18</td>
@@ -68,7 +68,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 1 milhão a R$ 6 milhões"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento2" onclick="setpremium()" value="De R$ 1 milhão a R$ 6 milhões"><span style="margin-left: 5px;" ></span>De R$ 1 milhão a R$ 6 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 550,30</td>
@@ -76,7 +76,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 6 milhões a R$ 20 milhões"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento3" onclick="setpremium()" value="De R$ 6 milhões a R$ 20 milhões"><span style="margin-left: 5px;">De R$ 6 milhões a R$ 20 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.100,60</td>
@@ -84,7 +84,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="De R$ 20 milhões a R$ 35 milhões"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento4" onclick="setpremium()" value="De R$ 20 milhões a R$ 35 milhões"><span style="margin-left: 5px;" ></span>De R$ 20 milhões a R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 1.981,08</td>
@@ -92,7 +92,7 @@
                 <tr>
                   <th>
                     <div class="radio">
-                      <label><input type="radio" name="faturamento" id="faturamento" onclick="setpremium()" value="Acima de R$ 35 milhões"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
+                      <label><input type="radio" name="faturamento" id="faturamento5" onclick="setpremium()" value="Acima de R$ 35 milhões"><span style="margin-left: 5px;">Acima de R$ 35 milhões</label>
                     </div>
                   </th>
                   <td style="text-align:right">R$ 3.301,80</td>
@@ -130,7 +130,7 @@
             </div><br>
           </div>
         </div>
-        <h5 class="expande" onclick="expande_end()" id="h5end">ENDEREÇO COMERCIAL <img class="expande" id="imgexpandirend" src="./brit/img/expandir.png" alt="expandir campos de endereço" style="max-height: 14px" onclick="expande_end()"></h5>
+        <h5 class="expande" onclick="expande_end()" id="h5end">ENDEREÇO COMERCIAL <img class="expande" id="imgexpandirend" src="/brit/img/expandir.png" alt="expandir campos de endereço" style="max-height: 14px" onclick="expande_end()"></h5>
         <fieldset class="form-group col-md-12 border p-3 display: inline-block" id="fieldend" style="display:none;">
           <div class="form-group col-md-3 p-3">
             <label for="cep" class="required">CEP (somente números):</label>
@@ -210,7 +210,7 @@
           </div>
         </fieldset>
         <br><br>
-        <h5 class="expande" onclick="expande_rep()" id="h5rep">DADOS DO REPRESENTANTE LEGAL <img class="expande" id="imgexpandirrep" src="./brit/img/expandir.png" alt="expandir campos de endereço" style="max-height: 14px" onclick="expande_rep()"></h5>
+        <h5 class="expande" onclick="expande_rep()" id="h5rep">DADOS DO REPRESENTANTE LEGAL <img class="expande" id="imgexpandirrep" src="/brit/img/expandir.png" alt="expandir campos de endereço" style="max-height: 14px" onclick="expande_rep()"></h5>
         <fieldset class="form-group col-md-12 border p-3 display: inline-block" id="fieldrep" style="display:none;">
           <div class="form-group col-md-12 p-3">
             <label for="representantelegal" class="required">Nome do Representante Legal:</label>
@@ -284,21 +284,21 @@
     </div>
       <!-- Scripts para a mensagem de sucesso pós submissão -->
       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="./brit/js/alerta_submit.js"></script>
+      <script src="/brit/js/alerta_submit.js"></script>
 
       <!-- genéricos -->
-      <script src="./brit/js/bootstrap.min.js"></script>
-      <script src="./brit/js/expande.js"></script>
+      <script src="/brit/js/bootstrap.min.js"></script>
+      <script src="/brit/js/expande.js"></script>
       <!-- específicos -->
-      <script src="./brit/js/cep.js"></script>
-      <script src="./brit/js/cpf.js"></script>
-      <script src="./brit/js/cnpj.js"></script>
-      <script src="./brit/js/mascaras.js"></script>
-      <script src="./brit/js/check_num.js"></script>
-      <script src="./brit/js/email.js"></script>
-      <script src="./brit/js/planos.js"></script>
-      <script src="./brit/js/expande.js"></script>
-      <script src="./brit/js/air.js"></script>    
+      <script src="/brit/js/cep.js"></script>
+      <script src="/brit/js/cpf.js"></script>
+      <script src="/brit/js/cnpj.js"></script>
+      <script src="/brit/js/mascaras.js"></script>
+      <script src="/brit/js/check_num.js"></script>
+      <script src="/brit/js/email.js"></script>
+      <script src="/brit/js/planos.js"></script>
+      <script src="/brit/js/expande.js"></script>
+      <script src="/brit/js/air.js"></script>    
       
 </body>
 </html>
