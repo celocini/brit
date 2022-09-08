@@ -33,3 +33,27 @@ body{
     transform: rotate(360deg);
   }
 }
+
+
+@font-face {
+  font-family: 'space_mono';
+  src:url('SpaceMono-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'pop';
+  src:url('Poppins-Regular.ttf');
+}
+
+body {
+  font-family: 'space_mono',  monospace;
+}
+
+h3 {
+  font-family: 'pop', sans-serif;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: 'pop', sans-serif;
+}
