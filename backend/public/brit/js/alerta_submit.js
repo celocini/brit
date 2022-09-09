@@ -22,6 +22,7 @@ function submit_sucesso(){
       ).then(function() {
         // Aqui é possível configurar o que acontece após clicar no OK na mensagem de sucesso
         console.log("Pós OK!!")
+        window.location.href = "https://brasilitplus.com/"
     });
 }
 
