@@ -115,7 +115,7 @@ class D4SignController extends Controller
     public function sendWebHook($document_uuid) {
         $url = new \stdClass();
 
-        $url->url = 'https://brit.brasilitplus.com/api/documento_webhook/';
+        $url->url = 'https://brit.brasilitplus.com/api/documento_webhook';
 
         $response = Http::withHeaders($this->headers)
                     ->withBody(
