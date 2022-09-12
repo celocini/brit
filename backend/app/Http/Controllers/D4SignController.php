@@ -149,8 +149,8 @@ class D4SignController extends Controller
         $temp[$this->template] = $temObj;
 
         $obj = new \stdClass();
-         $date = date('d-m-Y H-m-s');
-        $obj->name_document = "Brasil IT + - ". $dados->razao_social . " - " . $date;
+         $date = date('d-m-Y');
+        $obj->name_document = "Termo de adesão Brasil IT + - ". $dados->razao_social . " - " . $date;
         $obj->uuid_folder = "";
         $obj->templates = $temp;
 
