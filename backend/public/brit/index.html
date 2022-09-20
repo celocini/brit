@@ -117,7 +117,7 @@
           <div class="col-md-4">
             <div class="form-group p-3">
               <label for="cnpj" class="required">CNPJ (somente números):</label>
-              <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onblur="validarCNPJ(this);formatarCampo(this);verificaCNPJ(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
+              <input type="text" class="form-control" name="cnpj" id="cnpj" placeholder="Insira o CNPJ" required="required" onfocus="retirarFormatacao(this)" onchange="validarCNPJ(this);formatarCampo(this);verificaCNPJ(this)" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="14">
             </div>
           </div>
           <div class="col-md-8">
@@ -131,7 +131,7 @@
         <fieldset class="form-group col-md-12 border p-3 display: inline-block" id="fieldend" style="display:none;">
           <div class="form-group col-md-3 p-3">
             <label for="cep" class="required">CEP (somente números):</label>
-            <input type="text" class="form-control" name="cep" id="cep" placeholder="Insira o CEP" required="required" value="" size="10" onfocus="retirarFormatacaoCep(this)" onblur="pesquisacep(this.value);formatarCep(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
+            <input type="text" class="form-control" name="cep" id="cep" placeholder="Insira o CEP" required="required" value="" size="10" onfocus="retirarFormatacaoCep(this)" onchange="pesquisacep(this.value);formatarCep(this);" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="8">
           </div>
           <div class="row">
             <div class="col-md-5">
