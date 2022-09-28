@@ -27,7 +27,7 @@ class D4SignController extends Controller
         
         $this->token_api = config('d4sign.token_api');
         $this->crypt_key = config('d4sign.crypt_key');
-        $this->template = config('d4sign.template');
+        //$this->template = config('d4sign.template');
         $this->cofre = config('d4sign.cofre');
         $this->headers = [
             'Accept'   => 'application/json',
@@ -40,6 +40,7 @@ class D4SignController extends Controller
             'Authorization' => 'Bearer keyNEmaNWdysrYOjr',
             'Content-Type' => 'application/json'
         ];
+        $this->templates();
     }
 
 
@@ -73,6 +74,26 @@ class D4SignController extends Controller
         return response()->json(
             $response->object()
         , 200);
+    }
+    public function templates() {
+
+        $template = "";
+              
+        $response = Http::withHeaders($this->headers)
+                    ->post($this->getBaseUri('templates'));
+        
+        $documentos = (array)$response->object();
+        echo '<pre>';
+        foreach($documentos  as $documento) {
+            if($documento->name == "TA.docx") {
+                $template = $documento->id;
+            }
+        }
+        if($template != '') {
+            $this->template = $template;
+        } else {
+            die("Template não encontrado. Verifique se o nome é: TA.docx");
+        }
     }
     public function addSigners($dados, $document_uuid) {
         $signer = new \stdClass();
