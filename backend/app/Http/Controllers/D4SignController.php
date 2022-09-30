@@ -83,7 +83,7 @@ class D4SignController extends Controller
                     ->post($this->getBaseUri('templates'));
         
         $documentos = (array)$response->object();
-        echo '<pre>';
+        
         foreach($documentos  as $documento) {
             if($documento->name == "TA.docx") {
                 $template = $documento->id;
