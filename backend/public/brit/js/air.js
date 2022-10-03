@@ -1,6 +1,8 @@
 var thisForm = document.getElementById("adesao");
 const headers_ = {
-     'Authorization': 'Bearer keyNEmaNWdysrYOjr',
+    // sandbox
+    //  'Authorization': 'Bearer keyNEmaNWdysrYOjr',
+     'Authorization': 'Bearer key7ee003ZrFo0Va1',
      'Content-Type': 'application/json'
 };
 // When the form is submitted...
@@ -42,7 +44,9 @@ thisForm.addEventListener("submit", function(event) {
    var documento_criado = {};
 // POST the data 
 // o sufixo tblVjW7bR49CiQhG6 é o id da tabela TA
-  axios.post('http://localhost:8085/api/documento', documento, {headers: headers_}) //brit.brasilitplus.com
+  // rodar local
+  // axios.post('http://localhost:8085/api/documento', documento, {headers: headers_})
+  axios.post('https://brit.brasilitplus.com/api/documento', documento, {headers: headers_})
   .then((resp) => {
     console.log('resp',resp)
     documento_criado.uuid = resp.data.uuid
